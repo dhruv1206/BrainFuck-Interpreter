@@ -1,6 +1,6 @@
 import os
 
-file=input("ENTER YOUR FILE HERE:")
+file=input("ENTER YOUR FILE NAME HERE:")
 try: 
   os.path.isfile(file)
 except:
