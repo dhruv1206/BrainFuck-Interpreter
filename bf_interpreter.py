@@ -8,7 +8,14 @@ if len(sys.argv) == 2:
 else:
   file=input("ENTER YOUR FILE NAME HERE:")
 try: 
-  os.path.isfile(file)
+  if os.path.isfile(file):
+    # File exists
+    program_file = open(file, 'r')
+    program_data = ''.join(program_file.read().split('\n'))
+    program_file.close()
+  else:
+    # File does not exists
+    print("ERROR: File does not exist!")
 except:
   print("ERROR: File does not exist!")
   
