@@ -19,27 +19,29 @@ else:
 
 my_arr=[0]*30000
 index=0
-for data in program_data:
+if len(program_data)<=30000:
+  for data in program_data:
 
-  if data==">":
-    index+=1
+    if data==">":
+      index+=1
 
-  elif data=="<":
-    if index==0:
-      print("No Previous Element Found!")
-      break
-    else:
-      index-=1
+    elif data=="<":
+      if index==0:
+        print("No Previous Element Found!")
+        break
+      else:
+        index-=1
 
-  elif data=="+":
-    my_arr[index]+=1
+    elif data=="+":
+      my_arr[index]+=1
 
-  elif data=="-":
-    my_arr[index]-=1
+    elif data=="-":
+      my_arr[index]-=1
 
-  elif data==".":
-    print(chr(my_arr[index]) , end="")
+    elif data==".":
+      print(chr(my_arr[index]) , end="")
 
-  elif data==",":
-    my_arr[index]=int(input("ENTER ANY NUMBER:"))
-
+    elif data==",":
+      my_arr[index]=ord(input("ENTER A CHARACTER:"))
+else:
+  print("File is too large to handle!")
