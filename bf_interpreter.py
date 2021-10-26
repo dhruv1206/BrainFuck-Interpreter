@@ -1,3 +1,10 @@
+"""
+---------------------------------------------------------------------------
+                      BRAINFUCK INTERPRETER in Python
+---------------------------------------------------------------------------
+        By Dhruv Agrawal (dhruv1206) & Ashish Kushwaha (AshishKingdom)
+"""
+
 import os
 import sys # to get command line arguments
 
