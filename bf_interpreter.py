@@ -16,32 +16,34 @@ if os.path.isfile(file):
 else:
   # File does not exists
   print("ERROR: File does not exist!")
+  # we need to terminate program file doesn't exists
+  exit()
 
 my_arr=[0]*30000
 index=0
-if len(program_data)<=30000:
-  for data in program_data:
+for data in program_data:
 
-    if data==">":
+  if data==">":
+    if index==30000:
+      print("MAXIMUM value of index reached!")
+    else:
       index+=1
 
-    elif data=="<":
-      if index==0:
-        print("No Previous Element Found!")
-        break
-      else:
-        index-=1
+  elif data=="<":
+    if index==0:
+      print("No Previous Element Found!")
+      break
+    else:
+      index-=1
 
-    elif data=="+":
-      my_arr[index]+=1
+  elif data=="+":
+    my_arr[index]+=1
 
-    elif data=="-":
-      my_arr[index]-=1
+  elif data=="-":
+    my_arr[index]-=1
 
-    elif data==".":
-      print(chr(my_arr[index]) , end="")
+  elif data==".":
+    print(chr(my_arr[index]) , end="")
 
-    elif data==",":
-      my_arr[index]=ord(input("ENTER A CHARACTER:"))
-else:
-  print("File is too large to handle!")
+  elif data==",":
+    my_arr[index]=ord(input("ENTER A CHARACTER:"))
